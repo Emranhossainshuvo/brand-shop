@@ -1,15 +1,13 @@
-import { FcGoogle } from 'react-icons/fc';
+import { FcGoogle } from 'react-icons/fc'
 import { ImGithub } from 'react-icons/im'
 import { Link } from 'react-router-dom';
 
-const Login = () => {
+const Register = () => {
     return (
         <div className="hero min-h-screen bg-base-200">
             <div className="hero-content flex-col lg:flex-row-reverse">
-
                 <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                     <form className="card-body">
-                        
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Email</span>
@@ -26,7 +24,7 @@ const Login = () => {
                             </label>
                         </div>
                         <div className="form-control mt-6">
-                            <button className="btn btn-primary">Login</button>
+                            <button className="btn btn-primary">Register</button>
                         </div>
                         <div className="flex items-center justify-center gap-5">
                             <h3>Continue with</h3>
@@ -37,7 +35,7 @@ const Login = () => {
                                 <button className=""><ImGithub></ImGithub></button>
                             </div>
                         </div>
-                        <p>Don't have an account? <Link className='underline hover:text-green-700' to='/register'>Register</Link></p>
+                        <p>Already have an account? <Link className='underline hover:text-green-700' to='/login'>Login</Link></p>
                     </form>
                 </div>
             </div>
@@ -45,4 +43,4 @@ const Login = () => {
     );
 };
 
-export default Login;
+export default Register;
