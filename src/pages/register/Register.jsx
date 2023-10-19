@@ -9,7 +9,17 @@ import { AuthContext } from '../../providers/AuthProvider';
 
 const Register = () => {
 
-    const {emailPasswordAuth} = useContext(AuthContext); 
+    const {emailPasswordAuth, googleSignIn} = useContext(AuthContext); 
+
+    const handleGoogleSignIn = () => {
+        googleSignIn()
+        .then(result => {
+            console.log(result);
+        })
+        .then(error => {
+            console.error(error)
+        })
+    }
 
     const handleRegister = e => {
         e.preventDefault(); 
@@ -58,7 +68,7 @@ const Register = () => {
                             <div className="flex items-center justify-start gap-5">
                                 <h3>Continue with</h3>
                                 <div className="form-control">
-                                    <Link className=""><FcGoogle /></Link>
+                                    <Link onClick={handleGoogleSignIn} className=""><FcGoogle /></Link>
                                 </div>
                                 <div className="form-control">
                                     <Link className=""><ImGithub></ImGithub></Link>

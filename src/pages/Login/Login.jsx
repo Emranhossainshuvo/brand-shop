@@ -8,7 +8,17 @@ import { AuthContext } from "../../providers/AuthProvider";
 
 const Login = () => {
 
-    const {emailPasswordSignIn} = useContext(AuthContext); 
+    const {emailPasswordSignIn, googleSignIn} = useContext(AuthContext); 
+
+    const handleGoogleSignIn = () => {
+        googleSignIn()
+        .then(result => {
+            console.log(result);
+        })
+        .catch(error => {
+            console.error(error)
+        })
+    }
 
     const handleSignIn = e => {
         e.preventDefault(); 
@@ -59,7 +69,7 @@ const Login = () => {
                             <div className="flex items-center justify-start gap-5">
                                 <h3>Continue with</h3>
                                 <div className="form-control">
-                                    <Link className=""><FcGoogle /></Link>
+                                    <Link onClick={handleGoogleSignIn} className=""><FcGoogle /></Link>
                                 </div>
                                 <div className="form-control">
                                     <Link className=""><ImGithub></ImGithub></Link>
