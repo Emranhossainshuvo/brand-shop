@@ -1,8 +1,11 @@
-# React + Vite
+# FILMIC
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Filmic is your ultimate destination for everything related to movies. Discover the latest releases, read insightful reviews, and stay updated with the world of cinema.
 
-Currently, two official plugins are available:
+Basic features of the website: 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- This is a single page application that makes the application faster. 
+- It's connected to MongoDB, which means everything you do on this site is saved in MongoDB.
+- Filmic provides Firebase authentication and also Google and GitHub authentications. 
+- It also provides authorization, so you cannot access features like 'addToCart' or 'myCart' components if you're not logged in.
+- Filmic includes a collection of movie trailers and teasers, so user can get some  fun  from upcomming movie. 
