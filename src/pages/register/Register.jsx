@@ -4,8 +4,12 @@ import Navbar from '../shared/navbar/Navbar';
 import { FcGoogle } from 'react-icons/fc'
 import {ImGithub} from 'react-icons/im'
 import Footer from '../shared/footer/Footer';
+import { useContext } from 'react';
+import { AuthContext } from '../../providers/AuthProvider';
 
 const Register = () => {
+
+    const {emailPasswordAuth} = useContext(AuthContext); 
 
     const handleRegister = e => {
         e.preventDefault(); 
@@ -14,6 +18,13 @@ const Register = () => {
         const password = form.password.value; 
         const user = {email, password}
         console.log(user);
+        emailPasswordAuth(email, password)
+        .then(result => {
+            console.log(result.user);
+        })
+        .catch(error => {
+            console.error(error)
+        }) 
     }
 
     return (
