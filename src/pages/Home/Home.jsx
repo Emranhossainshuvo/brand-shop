@@ -4,6 +4,7 @@ import Banner from "../../components/banner/Banner";
 import Footer from "../shared/footer/Footer";
 import Navbar from "../shared/navbar/Navbar";
 import ProductCard from "../../components/productCard/ProductCard";
+import HappyMeet from "../../components/happyMeet/HappyMeet";
 
 
 const Home = () => {
@@ -23,6 +24,7 @@ const Home = () => {
 
                 }
             </div>
+            <HappyMeet></HappyMeet>
             <Footer></Footer>
         </div>
     );
