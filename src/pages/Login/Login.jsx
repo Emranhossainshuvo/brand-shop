@@ -8,7 +8,17 @@ import { AuthContext } from "../../providers/AuthProvider";
 
 const Login = () => {
 
-    const {emailPasswordSignIn, googleSignIn} = useContext(AuthContext); 
+    const {emailPasswordSignIn, googleSignIn, githubSignIn} = useContext(AuthContext); 
+
+    const githubAuth = () => {
+        githubSignIn()
+        .then(result => {
+            console.log(result);
+        })
+        .catch(error => {
+            console.error(error)
+        })
+    }
 
     const handleGoogleSignIn = () => {
         googleSignIn()
@@ -72,7 +82,7 @@ const Login = () => {
                                     <Link onClick={handleGoogleSignIn} className=""><FcGoogle /></Link>
                                 </div>
                                 <div className="form-control">
-                                    <Link className=""><ImGithub></ImGithub></Link>
+                                    <Link onClick={githubAuth} className=""><ImGithub></ImGithub></Link>
                                 </div>
                             </div>
                             <p>Dont have an account? <Link className="hover:underline hover:text-green-700" to='/register'>Register</Link></p>
