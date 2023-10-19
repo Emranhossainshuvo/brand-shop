@@ -17,7 +17,7 @@ const router = createBrowserRouter([
             {
                 path: '/', 
                 element: <Home></Home>, 
-                loader: () => fetch ('http://localhost:5000/product')
+                loader: () => fetch (' https://brand-shop-server-gm6ovoet3-shuvos-projects-7bea5cfb.vercel.app/product')
             }, 
             {
                 path: '/login', 
