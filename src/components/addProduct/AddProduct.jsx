@@ -1,4 +1,5 @@
 import Navbar from "../../pages/shared/navbar/Navbar";
+import Swal from 'sweetalert2'
 
 
 const AddProduct = () => {
@@ -25,6 +26,14 @@ const AddProduct = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data);
+                if(data.insertedId){
+                    Swal.fire({
+                        title: 'Successful!',
+                        text: 'You have successfully added a movie',
+                        icon: 'success',
+                        confirmButtonText: 'Cool'
+                      })
+                }
             })
     }
 
