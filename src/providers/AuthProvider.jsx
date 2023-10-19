@@ -19,16 +19,19 @@ const AuthProvider = ({children}) => {
     }
 
     const emailPasswordLogout = () => {
+        setLoading(true)
         return signOut(auth); 
     }
 
     const emailPasswordSignIn = (email, password) => {
+        setLoading(true)
         return signInWithEmailAndPassword(auth, email, password)
     }
 
     useEffect(() => {
         const unSubscribe = onAuthStateChanged(auth, currentUser => {
             setUser(currentUser)
+            setLoading(false)
         })
         return () => {
             unSubscribe(); 
