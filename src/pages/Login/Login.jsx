@@ -5,6 +5,7 @@ import {ImGithub} from 'react-icons/im'
 import Footer from "../shared/footer/Footer";
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
+import { Helmet } from "react-helmet-async";
 
 const Login = () => {
 
@@ -48,6 +49,9 @@ const Login = () => {
 
     return (
         <>
+        <Helmet>
+            <title>Filmic | Login</title>
+        </Helmet>
         <div>
             <Navbar></Navbar>
             <div className="hero min-h-screen bg-base-200">

@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import Navbar from "../../pages/shared/navbar/Navbar";
 import Swal from 'sweetalert2'
 
@@ -39,6 +40,9 @@ const AddProduct = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>Filmic | Add product</title>
+            </Helmet>
             <Navbar></Navbar>
             <h3 className="text-5xl">Add a Movie</h3>
             <form onSubmit={handleAddProduct} className="mt-8 text-center mx-auto font-secondary">

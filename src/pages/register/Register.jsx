@@ -6,6 +6,7 @@ import {ImGithub} from 'react-icons/im'
 import Footer from '../shared/footer/Footer';
 import { useContext } from 'react';
 import { AuthContext } from '../../providers/AuthProvider';
+import { Helmet } from 'react-helmet-async';
 
 const Register = () => {
 
@@ -49,6 +50,9 @@ const Register = () => {
 
     return (
         <>
+        <Helmet>
+            <title>Filmic | Register</title>
+        </Helmet>
         <div>
             <Navbar></Navbar>
             <h3 className="text-3xl">This is login</h3>
