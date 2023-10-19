@@ -9,9 +9,7 @@ const Navbar = () => {
 
     const handleSignOut = () => {
         emailPasswordLogout()
-        .then(result => {
-            
-        })
+        .then()
     }
 
     const navlinks = <>
