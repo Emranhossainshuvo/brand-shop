@@ -6,7 +6,7 @@ const HappyMeet = () => {
             <h3 className='text-5xl pt-10 pb-5'>We are happy to meet you!</h3>
             <p className="pb-5">
                 Explore Filmic: Innovative features, exclusive content, and cinematic enhancements <br /> for an immersive cinema experience.</p>
-            <input className="w-28 h-10 rounded-3xl border-gray-700 border-2 bg-transparent mb-10 hover:bg-gray-400 hover:text-white" type="submit" value="Send a mail" />
+            <input className="w-28  transition duration-500 ease-in-out h-10 rounded-3xl border-white border-2 bg-transparent mb-10 hover:bg-white hover:text-black" type="submit" value="Send a mail" />
         </div>
     );
 };
