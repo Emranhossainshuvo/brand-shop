@@ -9,3 +9,8 @@ Basic features of the website:
 - Filmic provides Firebase authentication and also Google and GitHub authentications. 
 - It also provides authorization, so you cannot access features like 'addToCart' or 'myCart' components if you're not logged in.
 - Filmic includes a collection of movie trailers and teasers, so user can get some  fun  from upcomming movie. 
+
+
+## Here is the live website link for this projects
+
+- https://ordinary-owl.surge.sh/

@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Navbar from "../shared/navbar/Navbar";
 import { FcGoogle } from 'react-icons/fc'
 import {ImGithub} from 'react-icons/im'
@@ -8,6 +8,10 @@ import { AuthContext } from "../../providers/AuthProvider";
 import { Helmet } from "react-helmet-async";
 
 const Login = () => {
+
+    const location = useLocation(); 
+
+    const navigate = useNavigate(); 
 
     const {emailPasswordSignIn, googleSignIn, githubSignIn} = useContext(AuthContext); 
 
@@ -38,9 +42,12 @@ const Login = () => {
         const password = form.password.value; 
         const user = {email, password}
         console.log(user);
+
+
         emailPasswordSignIn(email, password)
         .then(result => {
             console.log(result.user);
+            navigate(location?.state ? location.state : '/')
         })
         .catch(error => {
             console.error(error)

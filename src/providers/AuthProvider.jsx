@@ -4,6 +4,7 @@ import { GithubAuthProvider } from "firebase/auth";
 
 import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut } from "firebase/auth";
 import app from "../firebase/firebase.config";
+import { useLocation } from "react-router-dom";
 
 const provider = new GoogleAuthProvider();
 const githubProvider = new GithubAuthProvider();
@@ -14,7 +15,7 @@ export const AuthContext = createContext(null);
 const AuthProvider = ({children}) => {
 
     const [user, setUser] = useState(null); 
-    const [loading, setLoading] = useState(true); 
+    const [loading, setLoading] = useState(true);
 
     const emailPasswordAuth = (email, password) => {
         setLoading(true); 
