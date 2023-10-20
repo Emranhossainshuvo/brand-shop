@@ -12,6 +12,8 @@ import Swal from 'sweetalert2'
 const Register = () => {
 
     const [userError, setUserError] = useState('');
+    const [githubUserError, setGithubUserError] = useState('');
+    const [googleUserError, setGoogleUserError] = useState('');
 
     const { emailPasswordAuth, googleSignIn, githubSignIn } = useContext(AuthContext);
 
@@ -24,9 +26,22 @@ const Register = () => {
             .then(result => {
                 console.log(result);
                 navigate(location?.state ? location.state : '/')
+                Swal.fire({
+                    title: 'Successful!',
+                    text: 'You have successfully logged in',
+                    icon: 'success',
+                    confirmButtonText: 'Cool'
+                })
             })
             .catch(error => {
                 console.error(error)
+                setGithubUserError(error.message)
+                Swal.fire({
+                    title: 'Error!',
+                    text: `${githubUserError}`,
+                    icon: 'error',
+                    confirmButtonText: 'X'
+                })
             })
     }
 
@@ -35,9 +50,22 @@ const Register = () => {
             .then(result => {
                 console.log(result);
                 navigate(location?.state ? location.state : '/')
+                Swal.fire({
+                    title: 'Successful!',
+                    text: 'You have successfully logged in',
+                    icon: 'success',
+                    confirmButtonText: 'Cool'
+                })
             })
             .then(error => {
                 console.error(error)
+                setGoogleUserError(error.message)
+                Swal.fire({
+                    title: 'Error!',
+                    text: `${googleUserError}`,
+                    icon: 'error',
+                    confirmButtonText: 'X'
+                })
             })
     }
 
@@ -52,6 +80,12 @@ const Register = () => {
             .then(result => {
                 console.log(result.user);
                 navigate(location?.state ? location.state : '/')
+                Swal.fire({
+                    title: 'Successful!',
+                    text: 'You have successfully registered',
+                    icon: 'success',
+                    confirmButtonText: 'Cool'
+                })
             })
             .catch(error => {
                 console.error(error.message)
