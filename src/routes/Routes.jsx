@@ -19,7 +19,7 @@ const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>,
-                loader: () => fetch(' https://brand-shop-server-gm6ovoet3-shuvos-projects-7bea5cfb.vercel.app/product')
+                loader: () => fetch('https://brand-shop-server-gm6ovoet3-shuvos-projects-7bea5cfb.vercel.app/product')
             },
             {
                 path: '/login',
@@ -40,7 +40,7 @@ const router = createBrowserRouter([
             {
                 path: '/productdetail/:id',
                 element: <PrivateRoute><ProductDetail></ProductDetail></PrivateRoute>, 
-                loader: ({params}) => fetch(`http://localhost:5000/product/${params.id}`)
+                loader: ({params}) => fetch(`https://brand-shop-server-gm6ovoet3-shuvos-projects-7bea5cfb.vercel.app/product/${params.id}`)
             }
         ]
     }
