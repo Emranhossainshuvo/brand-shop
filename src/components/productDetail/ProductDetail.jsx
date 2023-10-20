@@ -10,7 +10,7 @@ const ProductDetail = () => {
 
     return (
         <div>
-            <h1>Hi from: {_id}</h1>
+            <h1>Hi from: {name}</h1>
         </div>
     );
 };
