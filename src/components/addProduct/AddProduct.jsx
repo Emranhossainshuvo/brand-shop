@@ -53,7 +53,7 @@ const AddProduct = () => {
                                 <span className="label-text">Name</span>
                             </label>
                             <label className="input-group">
-                                <input type="text" name="name" placeholder="Movie name" className="input" />
+                                <input type="text" name="name" placeholder=" name" className="input" />
                             </label>
                         </div>
                         <div className="form-control">
