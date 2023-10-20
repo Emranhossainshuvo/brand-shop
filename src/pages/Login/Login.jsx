@@ -19,6 +19,7 @@ const Login = () => {
         githubSignIn()
         .then(result => {
             console.log(result);
+            navigate(location?.state ? location.state : '/')
         })
         .catch(error => {
             console.error(error)
@@ -29,6 +30,7 @@ const Login = () => {
         googleSignIn()
         .then(result => {
             console.log(result);
+            navigate(location?.state ? location.state : '/')
         })
         .catch(error => {
             console.error(error)

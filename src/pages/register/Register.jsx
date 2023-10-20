@@ -1,5 +1,5 @@
 // import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Navbar from '../shared/navbar/Navbar';
 import { FcGoogle } from 'react-icons/fc'
 import {ImGithub} from 'react-icons/im'
@@ -12,10 +12,15 @@ const Register = () => {
 
     const {emailPasswordAuth, googleSignIn, githubSignIn} = useContext(AuthContext); 
 
+    const location = useLocation();
+
+    const navigate = useNavigate(); 
+
     const githubAuth = () => {
         githubSignIn()
         .then(result => {
             console.log(result);
+            navigate(location?.state ? location.state : '/')
         })
         .catch(error => {
             console.error(error)
@@ -26,6 +31,7 @@ const Register = () => {
         googleSignIn()
         .then(result => {
             console.log(result);
+            navigate(location?.state ? location.state : '/')
         })
         .then(error => {
             console.error(error)
@@ -42,6 +48,7 @@ const Register = () => {
         emailPasswordAuth(email, password)
         .then(result => {
             console.log(result.user);
+            navigate(location?.state ? location.state : '/')
         })
         .catch(error => {
             console.error(error)
