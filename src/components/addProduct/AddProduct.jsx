@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet-async";
 import Navbar from "../../pages/shared/navbar/Navbar";
 import Swal from 'sweetalert2'
+import { Link } from "react-router-dom";
 
 
 const AddProduct = () => {
@@ -18,22 +19,22 @@ const AddProduct = () => {
         const product = { name, brandName, type, price, short_description, rating, image };
         console.log(product);
         fetch(' https://brand-shop-server-gm6ovoet3-shuvos-projects-7bea5cfb.vercel.app/product', {
-            method: 'POST', 
+            method: 'POST',
             headers: {
                 'content-type': 'application/json'
-            }, 
+            },
             body: JSON.stringify(product)
         })
             .then(res => res.json())
             .then(data => {
                 console.log(data);
-                if(data.insertedId){
+                if (data.insertedId) {
                     Swal.fire({
                         title: 'Successful!',
                         text: 'You have successfully added a movie',
                         icon: 'success',
                         confirmButtonText: 'Cool'
-                      })
+                    })
                 }
             })
     }
@@ -44,8 +45,7 @@ const AddProduct = () => {
                 <title>Filmic | Add product</title>
             </Helmet>
             <Navbar></Navbar>
-            <h3 className="text-5xl">Add a Movie</h3>
-            <form onSubmit={handleAddProduct} className="mt-8 text-center mx-auto font-secondary">
+            <form onSubmit={handleAddProduct} className="mt-20 text-center mx-auto font-secondary">
                 <div className="md:flex md:gap-8 justify-center">
                     <div>
                         <div className="form-control">
@@ -110,9 +110,12 @@ const AddProduct = () => {
 
                     </div>
                 </div>
-                <input className="btn font-primary font-normal hover:bg-[#1a0804e2] border-[#dc3a3a] hover:border-[#a02525] text-2xl bg-[#080413] text-[#f3efef] md:w-2/5 w-4/5 mt-6" type="submit" value="Add to cart" />
-            </form>
+                <div className="w-full gap-3 flex justify-center">
+                    <input className="btn font-primary font-normal hover:bg-[#1a0804e2] border-[#423636] hover:border-[#3a2424] text-2xl bg-slate-800 text-[#f3efef] mt-6" type="submit" value="Add product" />
+                    <Link to='/' className="btn font-primary font-normal hover:bg-[#1a0804e2] border-[#423636] hover:border-[#3a2424] text-2xl bg-slate-800 text-[#f3efef] mt-6" type="submit" value="Add product">Back to home</Link>
         </div>
+            </form >
+        </div >
     );
 };
 

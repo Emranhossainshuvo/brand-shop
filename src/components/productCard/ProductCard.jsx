@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const ProductCard = ({ product }) => {
 
-    const { image, name, brandName, _id } = product;
+    const { image, name, brandName, _id } = product || {};
 
     return (
 

@@ -76,6 +76,15 @@ const Register = () => {
         const password = form.password.value;
         const user = { email, password }
         console.log(user);
+
+        // if (password.length < 6) {
+        //     Swal.fire({
+        //         title: 'Error!',
+        //         text: 'Password must be at least 6 characters',
+        //         icon: 'error',
+        //         confirmButtonText: 'X'
+        //     })
+        // }
         emailPasswordAuth(email, password)
             .then(result => {
                 console.log(result.user);
@@ -106,15 +115,12 @@ const Register = () => {
             </Helmet>
             <div>
                 <Navbar></Navbar>
-                <h3 className="text-3xl">This is login</h3>
                 <div className="hero min-h-screen bg-base-200">
                     <div className="hero-content flex-col lg:flex-row-reverse">
-                        <div className="text-center lg:text-left">
-                            <h1 className="text-5xl font-bold">Login now!</h1>
-                            <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-                        </div>
+
                         <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-                            <form onSubmit={handleRegister} className="card-body">
+                            <form onSubmit={handleRegister} className="card-body bg-slate-300 rounded-lg">
+                                <h3 className='text-2xl font-semibold text-center'>Register</h3>
                                 <div className="form-control">
                                     <label className="label">
                                         <span className="label-text">Email</span>
@@ -128,7 +134,7 @@ const Register = () => {
                                     <input type="password" name='password' placeholder="password" className="input input-bordered" required />
                                 </div>
                                 <div className="form-control mt-6">
-                                    <button className="btn btn-primary">Register</button>
+                                    <button className="btn bg-transparent hover:bg-slate-400 transition duration-500">Register</button>
                                 </div>
                                 <div className="flex items-center justify-start gap-5">
                                     <h3>Continue with</h3>
