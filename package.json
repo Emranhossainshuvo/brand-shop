@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@egjs/react-infinitegrid": "^4.11.0",
     "@material-tailwind/react": "^2.1.4",
     "firebase": "^10.5.0",
     "localforage": "^1.10.0",

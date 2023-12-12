@@ -25,7 +25,6 @@ const Home = () => {
                         key={product._id}
                         product={product}
                     ></ProductCard>)
-
                 }
             </div>
             <HappyMeet></HappyMeet>
